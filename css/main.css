@@ -1,0 +1,657 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../tipografia/Montserrat-Regular.ttf'),
+  url('../tipografia/Montserrat-ExtraBold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MontserratB';
+  src: url('../tipografia/Montserrat-ExtraBold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url('../tipografia/Lato-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'LatoB';
+  src: url('../tipografia/Lato-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*Reset CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*{
+  box-sizing: border-box;
+}
+
+/* ------------   Variables     -------------*/
+
+:root{
+/*Colores Principales*/
+--rojo:#ff4747;
+--amarillo:#ffb547;
+--celeste:#00bcb4;
+--blanco:#fefefe;
+--negro:#454545;
+--negroClaro:#202020;
+
+/*Referencia Fuentes*/
+--Jumbo: 60px;
+--Encabezado: 28px;
+--subEncabezado: 24px;
+--Titulo: 20px;
+--subTitulo: 16px;
+--fontCuerpo: 16px;
+--espaciado: 1.5;
+}
+
+/* ----------  estilos generales ------------*/
+hr{
+  color: var(--rojo);
+  border: solid 1px;
+	width: 30%;
+  margin-left: 0;
+}
+.btn{
+  text-transform: uppercase;
+  font-size: var(--fontCuerpo);
+}
+.btn-primary{
+  background-color: var(--rojo);
+}
+.btn-secondary{
+  background-color: var(--amarillo);
+  color: var(--negro);
+}
+.btn-success{
+  background-color: var(--celeste);
+}
+.btn-primary:hover{
+  background-color: var(--rojo);
+}
+.btn-secondary:hover{
+  background-color: var(--amarillo);
+  color: var(--negro);
+}
+
+h2{
+  font-size: var(--Jumbo);
+  font-family: MontserratB;
+  line-height: 1;
+  color: var(--blanco);
+  text-transform: uppercase;
+}
+h3{
+  font-size: var(--Encabezado);
+  font-family: MontserratB;
+  line-height: var(--espaciado);
+  color: var(--blanco);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+h4{
+  font-size: var(--subEncabezado);
+  font-family: LatoB;
+  line-height: var(--espaciado);
+  color: var(--rojo);
+  text-transform: uppercase;
+}
+h5{
+  font-size: var(--Titulo);
+  font-family: LatoB;
+  line-height: var(--espaciado);
+  color: var(--rojo);
+}
+h6{
+  font-size: var(--subTitulo);
+  font-family: LatoB;
+  line-height: var(--espaciado);
+  color: var(--negro);
+  text-transform: uppercase;
+}
+p, a{
+  font-size: var(--fontCuerpo);
+  font-family: Lato;
+  line-height: var(--espaciado);
+  color: var(--blanco);
+}
+li a:hover{
+  color: var(--blanco);
+}
+
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .show>.nav-link {
+    font-size: var(--fontCuerpo);
+    font-family: Montserrat;
+    line-height: var(--espaciado);
+    color: var(--blanco);
+}
+.navbar-nav .nav-link {
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.fa, .fas {
+    font-family: 'Font Awesome 5 Free';
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--blanco);;
+}
+
+.banner{
+  height: 20%;
+  width: 100%;
+  background-size: cover;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.banner p{
+  text-transform: uppercase;
+}
+/* ----------  bootstrap personalizado ------------*/
+#carousel{
+  height: 100vh;
+  overflow: hidden;
+}
+.carousel-inner{
+  height: 100%;
+}
+.carousel-inner .carousel-item{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.carousel-inner .carousel-item img{
+  position: absolute;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.carousel-inner .carousel-item .overlay{
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 40%;
+  align-self: center;
+  left: 10%;
+
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  text-align: justify;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 5%;
+    color: #fff;
+    text-align: center;
+    opacity: .5;
+    transition: opacity .15s ease;
+}
+
+.navbar:hover{
+  background-color: rgba(32, 32, 32, 0.8);
+}
+
+#navegacion ul li.active a{
+  border-bottom: solid var(--rojo) 2px;
+}
+
+#navegacion ul li a:hover{
+  color: var(--rojo);
+}
+
+/*----------- Segunda Pantalla -------------*/
+#pantalla-menu{
+  height: 100vh;
+  overflow: hidden;
+}
+#pantalla-menu .banner{
+  background: url('../imagenes/bannerR.png') no-repeat;
+}
+.lateral-menu{
+  position: relative;
+  height: 100%;
+  width: 40%;
+}
+.pantalla-menu .lateral-menu img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.seccion-menu{
+  height: 100%;
+  width: 60%;
+  padding: 10px;
+}
+.seccion-menu p{
+  text-align: justify;
+}
+.seccion-menu .col-right{
+  border-left: solid var(--rojo) 2px;
+}
+.seccion-menu .col-right .submenu{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.seccion-menu .col-right span{
+  display: block;
+  overflow: hidden;
+}
+.seccion-menu .col-right span h4{
+  font-family: Lato;
+  font-size: 30px;
+  color: var(--negro);
+}
+.seccion-menu h3, .seccion-menu h5{
+  color: var(--rojo);
+}
+.seccion-menu p{
+  color: var(--negro);
+}
+
+/* --------------  Tercer Pantalla  -----------------*/
+.pantalla-testimonios{
+  min-height: 100vh;
+  background-color: var(--celeste);
+  padding: 20px 0;
+  position: relative;
+}
+.pantalla-testimonios .contenedor{
+  position: absolute;
+  height: 80%;
+  margin: 0 20px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+}
+.contenedor h5, .contenedor hr{
+  color: var(--celeste);
+}
+.pantalla-testimonios .contenedor .card-deck .card .card-body{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.pantalla-testimonios .contenedor .card-deck .card .card-body img{
+  width: 150px;
+  height: 150px;
+  margin-top: -75px;
+
+}
+.card p{
+  color: var(--negro);
+  text-align: justify;
+}
+
+.pantalla-testimonios .banner{
+  position: absolute;
+  background: url('../imagenes/bannerA.png') no-repeat;
+}
+.pantalla-testimonios .banner p,.pantalla-testimonios .banner h3{
+  color: var(--negroClaro);
+}
+
+
+/* --------------  Cuarta Pantalla  -----------------*/
+.pantalla-especialidades{
+  min-height: 100vh;
+  background: url('../imagenes/Fondo.jpg') no-repeat;
+  background-size: cover;
+  padding: 20px 0;
+  position: relative;
+  overflow: hidden;
+}
+.pantalla-especialidades .contenedor{
+  position: absolute;
+  height: 100%;
+  margin: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+}
+.pantalla-especialidades .contenedor h5, .contenedor hr{
+  color: var(--celeste);
+}
+.pantalla-especialidades .contenedor .card-deck .card .card-body{
+  display: flex;
+  flex-flow: row wrap;
+}
+.pantalla-especialidades .card-body img{
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+
+}
+.pantalla-especialidades .card p{
+  color: var(--negro);
+  text-align: justify;
+}
+
+/* --------------  Footer  -----------------*/
+footer .card-group .logo{
+  background-color: var(--negroClaro);
+  text-align: center;
+}
+footer .card-group .logo section{
+  margin: auto;
+}
+footer .card-group .logo img{
+  width: 150px;
+}
+footer .card-group .descubre address{
+  font-family: 'Lato';
+  font-size: var(--fontCuerpo);
+  line-height: 2.5;
+}
+footer .card-group .descubre i, footer .card-group hr{
+  font-size: var(--fontCuerpo);
+  color: var(--celeste);
+}
+footer .card-group .noticias .navbar .form-control, footer .card-group .noticias .navbar .btn{
+  font-family: 'Lato';
+  font-size: var(--fontCuerpo);
+}
+
+/* --------------  MOVIL DESIGN  -----------------*/
+@media screen and (max-width:1100px) {
+  .lateral-menu{
+    position: relative;
+    height: 100%;
+    width: 30%;
+  }
+  .seccion-menu{
+    height: 100%;
+    width: 70%;
+    padding: 10px;
+  }
+
+
+}
+
+@media screen and (max-width:900px) {
+  .navbar{
+    background-color: rgba(32, 32, 32, 0.8);
+  }
+  #navegacion ul li {
+      margin: .1rem 0;
+  }
+  #navegacion ul li.active a{
+    border: none;
+  }
+  #navegacion ul li.active{
+    background-color: var(--rojo);
+  }
+  #navegacion ul li:hover{
+    background-color: var(--rojo);
+  }
+  #navegacion ul li a:hover{
+    color: var(--blanco);
+  }
+
+  .carousel-inner .carousel-item .overlay{
+    --Jumbo: 50px;
+    width: 100%;
+    left: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .lateral-menu{
+    display: none;
+  }
+  .seccion-menu{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+  }
+  .seccion-menu h3{
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: solid var(--rojo) 2px;
+  }
+
+
+
+}
+
+@media screen and (max-width:770px) {
+  #pantalla-menu{
+    height: 150vh;
+    overflow: hidden;
+  }
+  .pantalla-testimonios{
+    height: 150vh;
+    overflow: hidden;
+  }
+  .pantalla-testimonios h3, .pantalla-especialidades h3{
+    margin: 0 auto;
+  }
+  .pantalla-testimonios .card-deck{
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 10px;
+  }
+  .pantalla-testimonios .contenedor .card-deck .card .card-body{
+    display: flex;
+    flex-flow: row;
+    column-gap: 10px;
+  }
+
+  .pantalla-testimonios .card-deck .card .card-body section{
+    margin: auto;
+  }
+
+  .pantalla-testimonios .contenedor .card-deck .card .card-body img{
+    margin-top: 0;
+  }
+  .banner{
+    height: 15%;
+    padding: 5px;
+
+  }
+
+  /*-------- ESPECIALIDADES --------*/
+  .pantalla-especialidades{
+    height: 150vh;
+    overflow: hidden;
+  }
+  .pantalla-especialidades .card-deck{
+    display: flex;
+    flex-flow: column wrap;
+    row-gap: 10px;
+  }
+  .pantalla-especialidades .contenedor .card-deck .card .card-body{
+    display: flex;
+    flex-flow: row;
+    column-gap: 10px;
+  }
+
+  .pantalla-especialidades .card-deck .card .card-body section{
+    margin: auto;
+  }
+
+  .pantalla-especialidades .contenedor .card-deck .card .card-body img{
+    object-fit: cover;
+    object-position: center top;
+    height: 100%;
+    margin-top: 0;
+  }
+  /*-------- FIN ESPECIALIDADES --------*/
+
+  footer .info .noticias {
+    display: none;
+  }
+  footer .info .descubre{
+    width: 100%;
+  }
+  footer .info .descubre address{
+    margin-top: 10px;
+    line-height: 3;
+  }
+
+}
+
+@media screen and (max-width:600px) {
+
+  .banner{
+    align-content: space-around;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .pantalla-especialidades{
+    height: 200vh;
+  }
+
+  .pantalla-especialidades .contenedor .card-deck .card .card-body{
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .pantalla-especialidades .contenedor .card-deck .card .card-body img{
+    width: 150px;
+    height: 150px;
+    margin-top: -30px;
+  }
+
+  footer .card-group {
+    display: flex;
+    flex-direction: row;
+  }
+  footer .card-group .logo{
+    width: 40%;
+  }
+  footer .card-group .noticias {
+    display: none;
+  }
+
+
+}
+
+@media screen and (max-width:500px) {
+  .carousel-inner .carousel-item .overlay{
+    --Jumbo: 36px;
+    --subEncabezado: 22px;
+    --Titulo: 18px;
+    --subTitulo: 14px;
+    --Encabezado: 26px;
+    --fontCuerpo: 14px;
+  }
+
+  .pantalla-testimonios{
+    height: 200vh;
+    --Encabezado: 26px;
+  }
+
+  .pantalla-testimonios .contenedor .card-deck .card .card-body{
+    align-items: center;
+    flex-flow: column wrap;
+    row-gap: 30px;
+  }
+  .pantalla-testimonios .contenedor .card-deck .card .card-body section{
+    margin: auto;
+  }
+  .pantalla-testimonios .contenedor .card-deck .card .card-body img{
+    height: 100px;
+    width: 100px;
+    margin-top: -50px;
+  }
+
+  .banner{
+    --subEncabezado: 22px;
+    --Titulo: 18px;
+    --subTitulo: 14px;
+    --Encabezado: 26px;
+    --fontCuerpo: 14px;
+  }
+
+  footer .card-group {
+    flex-wrap: wrap;
+  }
+  footer .card-group .logo, footer .card-group .descubre{
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width:460px) {
+  #pantalla-menu{
+    height: 200vh;
+  }
+
+}
+
+
+
+
+/*-------   Footer    -------*/

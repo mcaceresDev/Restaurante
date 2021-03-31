@@ -114,10 +114,10 @@ hr{
 .btn-success{
   background-color: var(--celeste);
 }
-.btn-primary:hover{
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus{
   background-color: var(--rojo);
 }
-.btn-secondary:hover{
+.btn-secondary:hover, .btn-secondary:active, .btn-secondary:focus{
   background-color: var(--amarillo);
   color: var(--negro);
 }
@@ -231,7 +231,6 @@ li a:hover{
   width: 40%;
   align-self: center;
   left: 10%;
-
   display: flex;
   flex-flow: row wrap;
   align-content: center;
@@ -239,21 +238,7 @@ li a:hover{
 }
 
 .carousel-control-next, .carousel-control-prev {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
     width: 5%;
-    color: #fff;
-    text-align: center;
-    opacity: .5;
-    transition: opacity .15s ease;
 }
 
 .navbar:hover{
@@ -267,22 +252,39 @@ li a:hover{
 #navegacion ul li a:hover{
   color: var(--rojo);
 }
-
+/*---- Headroom------*/
+#navega{
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+    background-color: rgba(32, 32, 32, 0.8);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+/*---- Fin Headroom------*/
 /*----------- Segunda Pantalla -------------*/
 #pantalla-menu{
-  height: 100vh;
+  height: auto;
   overflow: hidden;
 }
 #pantalla-menu .banner{
   background: url('../imagenes/bannerR.png') no-repeat;
 }
+
 .lateral-menu{
-  position: relative;
   height: 100%;
   width: 40%;
 }
 .pantalla-menu .lateral-menu img{
-  position: absolute;
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -322,13 +324,12 @@ li a:hover{
 
 /* --------------  Tercer Pantalla  -----------------*/
 .pantalla-testimonios{
-  min-height: 100vh;
+  height: auto;
+  width: 100%;
   background-color: var(--celeste);
-  padding: 20px 0;
-  position: relative;
+  padding: 20px 0 0 0;
 }
 .pantalla-testimonios .contenedor{
-  position: absolute;
   height: 80%;
   margin: 0 20px;
   display: flex;
@@ -337,6 +338,9 @@ li a:hover{
 }
 .contenedor h5, .contenedor hr{
   color: var(--celeste);
+}
+.pantalla-testimonios .contenedor .card-deck{
+  margin-top: 75px;
 }
 .pantalla-testimonios .contenedor .card-deck .card .card-body{
   display: flex;
@@ -355,7 +359,8 @@ li a:hover{
 }
 
 .pantalla-testimonios .banner{
-  position: absolute;
+  margin-bottom: 0;
+  margin-top: 50px;
   background: url('../imagenes/bannerA.png') no-repeat;
 }
 .pantalla-testimonios .banner p,.pantalla-testimonios .banner h3{
@@ -365,15 +370,14 @@ li a:hover{
 
 /* --------------  Cuarta Pantalla  -----------------*/
 .pantalla-especialidades{
-  min-height: 100vh;
+  height: auto;
+  width: 100%;
   background: url('../imagenes/Fondo.jpg') no-repeat;
   background-size: cover;
   padding: 20px 0;
-  position: relative;
   overflow: hidden;
 }
 .pantalla-especialidades .contenedor{
-  position: absolute;
   height: 100%;
   margin: 20px;
   display: flex;
@@ -382,6 +386,10 @@ li a:hover{
 }
 .pantalla-especialidades .contenedor h5, .contenedor hr{
   color: var(--celeste);
+}
+.pantalla-especialidades .contenedor .card-deck{
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
 .pantalla-especialidades .contenedor .card-deck .card .card-body{
   display: flex;
@@ -426,17 +434,15 @@ footer .card-group .noticias .navbar .form-control, footer .card-group .noticias
 /* --------------  MOVIL DESIGN  -----------------*/
 @media screen and (max-width:1100px) {
   .lateral-menu{
-    position: relative;
-    height: 100%;
+    height: 50vw;
     width: 30%;
+    margin-top: 5%;
   }
   .seccion-menu{
     height: 100%;
     width: 70%;
     padding: 10px;
   }
-
-
 }
 
 @media screen and (max-width:900px) {
@@ -480,24 +486,22 @@ footer .card-group .noticias .navbar .form-control, footer .card-group .noticias
     padding-bottom: 10px;
     border-bottom: solid var(--rojo) 2px;
   }
-
-
-
 }
 
 @media screen and (max-width:770px) {
   #pantalla-menu{
-    height: 150vh;
+    height: auto;
     overflow: hidden;
   }
   .pantalla-testimonios{
-    height: 150vh;
+    height: auto;
     overflow: hidden;
   }
   .pantalla-testimonios h3, .pantalla-especialidades h3{
     margin: 0 auto;
   }
-  .pantalla-testimonios .card-deck{
+  .pantalla-testimonios .contenedor .card-deck{
+    margin-top: 50px;
     display: flex;
     flex-flow: column wrap;
     row-gap: 10px;
@@ -518,18 +522,17 @@ footer .card-group .noticias .navbar .form-control, footer .card-group .noticias
   .banner{
     height: 15%;
     padding: 5px;
-
   }
 
   /*-------- ESPECIALIDADES --------*/
   .pantalla-especialidades{
-    height: 150vh;
     overflow: hidden;
   }
-  .pantalla-especialidades .card-deck{
+  .pantalla-especialidades .contenedor .card-deck{
     display: flex;
     flex-flow: column wrap;
     row-gap: 10px;
+    margin-top: 20px;
   }
   .pantalla-especialidades .contenedor .card-deck .card .card-body{
     display: flex;
@@ -570,10 +573,6 @@ footer .card-group .noticias .navbar .form-control, footer .card-group .noticias
     text-align: center;
   }
 
-  .pantalla-especialidades{
-    height: 200vh;
-  }
-
   .pantalla-especialidades .contenedor .card-deck .card .card-body{
     display: flex;
     flex-flow: row wrap;
@@ -601,16 +600,14 @@ footer .card-group .noticias .navbar .form-control, footer .card-group .noticias
 @media screen and (max-width:500px) {
   .carousel-inner .carousel-item .overlay{
     --Jumbo: 36px;
+  }
+  :root{
+    --Jumbo: 36px;
     --subEncabezado: 22px;
     --Titulo: 18px;
     --subTitulo: 14px;
     --Encabezado: 26px;
     --fontCuerpo: 14px;
-  }
-
-  .pantalla-testimonios{
-    height: 200vh;
-    --Encabezado: 26px;
   }
 
   .pantalla-testimonios .contenedor .card-deck .card .card-body{
@@ -627,14 +624,6 @@ footer .card-group .noticias .navbar .form-control, footer .card-group .noticias
     margin-top: -50px;
   }
 
-  .banner{
-    --subEncabezado: 22px;
-    --Titulo: 18px;
-    --subTitulo: 14px;
-    --Encabezado: 26px;
-    --fontCuerpo: 14px;
-  }
-
   footer .card-group {
     flex-wrap: wrap;
   }
@@ -643,15 +632,4 @@ footer .card-group .noticias .navbar .form-control, footer .card-group .noticias
   }
 
 }
-
-@media screen and (max-width:460px) {
-  #pantalla-menu{
-    height: 200vh;
-  }
-
-}
-
-
-
-
 /*-------   Footer    -------*/

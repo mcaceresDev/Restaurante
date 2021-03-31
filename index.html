@@ -7,45 +7,45 @@
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>Italiano</title>
+    <link rel="shortcut icon" href="./imagenes/Spaguetti.ico">
   </head>
   <body>
+
+<!-- Cabecera y Navegación-->
+    <header>
+      <nav id="navega" class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#!"><img src="./imagenes/Logo.png" alt=""></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navegacion" aria-controls="navegacion" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""><i class="fas fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navegacion">
+          <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#carousel">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pantalla-menu">Menú</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#pantalla-especialidades">Especial del mes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!">Reservaciones</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
 
     <!-- Slide Ventana de Bienvenida   -->
     <div id="carousel" class="carousel slide" data-ride="carousel">
-
-      <header>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top ">
-          <a class="navbar-brand" href="#!"><img src="./imagenes/Logo.png" alt=""></a>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navegacion" aria-controls="navegacion" aria-expanded="false" aria-label="Toggle navigation">
-            <span class=""><i class="fas fa-bars"></i></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navegacion">
-            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-              <li class="nav-item active">
-                <a class="nav-link" href="#!">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!">Nosotros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!">Menú</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!">Especial del mes</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!">Reservaciones</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#!">Contacto</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-
-
       <ol class="carousel-indicators">
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
         <li data-target="#carousel" data-slide-to="1"></li>
@@ -90,45 +90,46 @@
           </section>
           <a class="btn btn-secondary" href="#">Reserva ahora</a>
         </div>
-        <div class="lateral-menu float-md-left">
-          <img src="./imagenes/hongos.jpeg" alt="">
-        </div>
-        <section class="seccion-menu float-md-left">
-          <h3>Menú del Mes</h3>
-          <div class="row">
-            <div class="col-md-6">
-              <h6>Entrada</h6>
-              <h5>Ensalada capresse</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+          <div class="lateral-menu float-md-left">
+            <img src="./imagenes/hongos.jpeg" alt="">
+          </div>
+          <section class="seccion-menu float-md-left">
+            <h3>Menú del Mes</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <h6>Entrada</h6>
+                <h5>Ensalada capresse</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <hr>
 
-              <h6>Antipasti</h6>
-              <h5>Crema de espinacas con albahaca</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <h6>Antipasti</h6>
+                <h5>Crema de espinacas con albahaca</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <hr>
 
-              <h6>Pasta</h6>
-              <h5>Linguini al Campo</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <h6>Pasta</h6>
+                <h5>Linguini al Campo</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <hr>
-            </div>
+              </div>
 
-            <div class="col-md-6 col-right">
-              <h6>Postre</h6>
-              <h5>Genovesa</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <div class="col-md-6 col-right">
+                <h6>Postre</h6>
+                <h5>Genovesa</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <hr>
 
-              <h6>Maridaje</h6>
-              <h5>Cuatro vinos nacionales*</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                <h6>Maridaje</h6>
+                <h5>Cuatro vinos nacionales*</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
                 <hr>
-              <section class="submenu">
+                <section class="submenu">
                   <span><h5 class="float-md-left">Con maridaje</h5><br>
                     <h4>$840.°°</h4>
                   </span>
@@ -136,16 +137,14 @@
                     <h5 class="float-md-left">Sin maridaje</h5>
                     <h4>$480.°°</h4>
                   </span>
-              </section>
-              <hr>
+                </section>
+                <hr>
 
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+
     </div>
-
-
-
 <!--***************************  PANTALLA DE TESTIMONIOS ************************ -->
     <div class="pantalla-testimonios">
       <div class="contenedor">
@@ -185,7 +184,7 @@
             </div>
       </div>
 
-      <div class="banner fixed-bottom">
+      <div class="banner">
         <section>
           <h3>Te estamos esperando</h3>
           <p>Lunes a Sabado de 13:00 a 23:00 Horas. <br> Domingo de 11:00 a 21:00 Horas</p>
@@ -196,7 +195,7 @@
     </div>
 
 <!--***************************  PANTALLA DE ESPECIALIDADES ************************ -->
-    <div class="pantalla-especialidades">
+    <div id="pantalla-especialidades" class="pantalla-especialidades">
       <div class="contenedor">
             <h3>Especialidades</h3>
 
@@ -246,7 +245,7 @@
     </div>
 
 <!-- **   Footer   ** -->
-    <footer>
+    <footer id="contacto">
       <div class="card-group">
         <div class="card logo">
           <section class="">
@@ -282,15 +281,17 @@
           </div>
         </div>
     </div>
-
-
-
     </footer>
 
 
 
   </body>
-
+  <script src="./js/headroom.min.js"></script>
+  <script>
+    var cabecera = document.querySelector('#navega');
+    var headroom = new Headroom(cabecera);
+    headroom.init();
+  </script>
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
 

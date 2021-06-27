@@ -1,0 +1,256 @@
+
+/* ----------  bootstrap personalizado ------------*/
+#carousel{
+  height: 100vh;
+  overflow: hidden;
+}
+.carousel-inner{
+  height: 100%;
+}
+.carousel-inner .carousel-item{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.carousel-item img{
+  position: absolute;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.carousel-item .overlay{
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  text-align: justify;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    width: 5%;
+}
+
+.navbar:hover{
+  background-color: rgba(32, 32, 32, 0.8);
+}
+
+#navegacion ul li.active a{
+  border-bottom: solid var(--rojo) 2px;
+}
+
+#navegacion ul li a:hover{
+  color: var(--rojo);
+}
+
+/* ---------------------------------------- */
+/*---- Headroom------*/
+#navega{
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.headroom {
+  will-change: transform;
+    transition: transform 200ms linear;
+  }
+.headroom--pinned {
+  transform: translateY(0%);
+    background-color: rgba(32, 32, 32, 0.8);
+}
+.headroom--unpinned {
+  transform: translateY(-100%);
+}
+/*---- Fin Headroom------*/
+/* ---------------------------------------- */
+
+
+/*----------- Segunda Pantalla -------------*/
+ #pantalla-menu{
+  height: auto;
+  overflow: hidden;
+}
+#pantalla-menu .banner{
+  background: url('../imagenes/bannerR.png') no-repeat;
+  display: flex;
+  text-align: center;
+}
+.lateral-menu{
+  display: none;
+}
+
+.seccion-menu h3{
+  text-align: center;
+  border-bottom: solid var(--rojo) 1px;
+}
+.seccion-menu h3, .seccion-menu h5{
+  color: var(--rojo);
+  line-height: 1.5;
+}
+.seccion-menu p{
+  color: var(--negro);
+  text-align: justify;
+  line-height: 1.5;
+}
+
+
+/* --------------  Tercer Pantalla  -----------------*/
+.pantalla-testimonios{
+  height: auto;
+  width: 100%;
+  background-color: var(--celeste);
+  padding: 20px 0 0 0;
+}
+.pantalla-testimonios .contenedor{
+  height: 80%;
+  margin: 0 20px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-around;
+}
+.contenedor h5, .contenedor hr{
+  color: var(--celeste);
+}
+.pantalla-testimonios .contenedor .card-deck{
+  margin-top: 75px;
+}
+.pantalla-testimonios .contenedor .card-deck .card .card-body{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.pantalla-testimonios .contenedor .card-deck .card .card-body img{
+  width: 150px;
+  height: 150px;
+  margin-top: -75px;
+
+}
+.card p{
+  color: var(--negro);
+  text-align: justify;
+}
+
+.pantalla-testimonios .banner{
+  display: flex;
+  text-align: center;
+  background: url('../imagenes/bannerA.png') no-repeat;
+}
+.pantalla-testimonios .banner p,.pantalla-testimonios .banner h3{
+  color: var(--negroClaro);
+} 
+.noticias{
+  display: none;
+}
+
+/* --------------  Cuarta Pantalla  -----------------*/
+ .pantalla-especialidades{
+  height: auto;
+  width: 100%;
+  background: url('../imagenes/Fondo.jpg') no-repeat;
+  background-size: cover;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+
+/* --------------  Footer  -----------------*/
+ footer .card-group .logo{
+  background-color: var(--negroClaro);
+  text-align: center;
+}
+footer .card-group .logo section{
+  margin: auto;
+}
+footer .card-group .logo img{
+  width: 150px;
+}
+footer .card-group .descubre address{
+  font-family: 'Lato';
+  font-size: var(--fontCuerpo);
+  line-height: 2.5;
+}
+footer .card-group .descubre i, footer .card-group hr{
+  font-size: var(--fontCuerpo);
+  color: var(--celeste);
+}
+footer .card-group .noticias .navbar .form-control, footer .card-group .noticias .navbar .btn{
+  font-family: 'Lato';
+  font-size: var(--fontCuerpo);
+} 
+
+/* --------------  RESPONSIVE DESIGN  -----------------*/
+@media screen and (min-width:500px){
+  .carousel-item .overlay{
+    width: 80%;
+  }
+}
+@media screen and (min-width:600px){
+  :root{
+    --Jumbo: 45px;
+  }
+  
+}
+@media screen and (min-width:700px){
+  :root{
+    --Jumbo: 60px;
+     --Encabezado: 28px;
+     --subEncabezado: 24px;
+     --Titulo: 20px;
+     --subTitulo: 16px;
+     --fontCuerpo: 16px;
+     --espaciado: 1.5;
+    
+  }
+
+  .banner{
+    flex-flow: row wrap;
+    justify-content: space-between;  
+  }
+  .banner p{
+    text-align: justify;  
+  }
+  
+  .banner .btn{
+    max-width: 200px;
+  }
+
+  .menu{
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+  }
+  
+  .colD{
+    border-left: solid var(--rojo) 2px;
+    padding-left: 5px;
+  }
+
+  .noticias{
+    display: none;
+  }
+
+  .noticias{
+    display: block;
+  }
+}
+
+@media screen and (min-width:1000px){
+  .lateral-menu{
+    display: inline;
+    width: 40%;
+    float: left;
+  }
+  .seccion-menu{
+    width: 55%;
+    float: left;
+  }
+  .seccion-menu h3{
+    text-align: left;
+    border-bottom: none;
+  }
+
+  .carousel-item .overlay{
+    width: 50%;
+  }
+
+}
